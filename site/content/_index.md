@@ -1,20 +1,32 @@
 ---
-title: "Great coffee with a conscience"
-subtitle: Support sustainable farming while enjoying a cup
-image: /img/home-jumbotron.jpg
-blurb:
-    heading: Why Kaldi?
-    text: "Kaldi is the coffee store for everyone who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities."
-intro:
-    heading: "What we offer"
-    text: "Kaldi is the ultimate spot for coffee lovers who want to learn about their java’s origin and support the farmers that grew it. We take coffee production, roasting and brewing seriously and we’re glad to pass that knowledge to anyone."
+title: "Origin Hummus"
+subtitle: Real ingredients. Bursting with flavor.
+image: /img/logo.png
+blurb: 
+    heading: Quality you can taste
+    text: >
+      At Origin Hummus, we believe in the power of simplicity. That’s why we use only the freshest, highest quality ingredients, allowing the natural flavors to shine through in every bite. Each batch is made with care and respect for the tradition behind it, ensuring that you experience the real taste of Palestinian hummus with every dip.
+    image: /img/product-bowl.png
+info:
+    heading: "How to buy"
+    text: "Origin Hummus is currently being offered at:"
+    locations:
+    - title: Another Cafe
+      address: 1191 Pine St., San Francisco, CA 94109 
+      image: /img/origin-map-01.png
+    - title: The Olive Market
+      address: 6455 Owens Dr., Pleasanton, CA 94588
+      image: /img/origin-map-02.png
 products:
-    - image: img/illustrations-coffee.svg
-      text: "We sell green and roasted coffee beans that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a variety of coffee beans grown with great care for the environment and local communities. Check our post or contact us directly for current availability."
-    - image: /img/illustrations-coffee-gear.svg
-      text: "We offer a small, but carefully curated selection of brewing gear and tools for every taste and experience level. No matter if you roast your own beans or just bought your first french press, you’ll find a gadget to fall in love with in our shop."
-values:
-    heading: Our values
-    text: Coffee is an amazing part of human culture but it has a dark side too – one of colonialism and mindless abuse of natural resources and human lives. We want to turn this around and return the coffee trade to the drink’s exhilarating, empowering and unifying nature.
+    heading: A World of Flavors
+    text: While we stay true to our roots with our traditional hummus, we’re also excited to bring a modern twist to the table. Our fusion flavors take inspiration from a variety of global cuisines, offering a fresh take on the classic dish, and inviting you to explore new tastes while staying connected to our origin.
+    items:
+        - image: img/product-traditional.png
+          text: "Traditional"
+        - image: /img/product-jalapeno.png
+          text: "Jalapeño Cilantro"
+        - image: img/product-beet.png
+          text: "Roasted Beet"
+        - image: /img/product-curry.png
+          text: "Spicy Curry"
 ---
-
