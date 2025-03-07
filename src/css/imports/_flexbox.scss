@@ -14,6 +14,7 @@
 .flex-column  { flex-direction: column; }
 .flex-row     { flex-direction: row; }
 .flex-wrap    { flex-wrap: wrap; }
+.flex-nowrap    { flex-wrap: nowrap; }
 
 .items-start    { align-items: flex-start; }
 .items-end      { align-items: flex-end; }
@@ -63,6 +64,7 @@
   .flex-column-ns { flex-direction: column; }
   .flex-row-ns     { flex-direction: row; }
   .flex-wrap-ns { flex-wrap: wrap; }
+  .flex-nowrap-ns    { flex-wrap: nowrap; }
   .items-start-ns { align-items: flex-start; }
   .items-end-ns { align-items: flex-end; }
   .items-center-ns { align-items: center; }

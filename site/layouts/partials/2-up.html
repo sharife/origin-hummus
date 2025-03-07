@@ -3,9 +3,9 @@
     <h2 class="f3 b lh-title mb2">{{.heading}}</h2>
     <p class="mb4 mw6">{{.text}}</p>
 
-    <div class="flex-ns mhn2-ns mb3">
+    <div class="flex-auto flex-wrap flex-nowrap-ns flex mhn2-ns mb3">
       {{ range .items }}
-      <div class="ph2-ns w-50-ns tc bg-grey-1 pa4 pb1 ma1 br1">
+      <div class="ph2-ns w-40 w-50-ns tc bg-grey-1 pa4 pb1 ma1 br1">
         <img src="{{.image}}" alt="" class="center db mb3" style="max-width: 150px">
         <p class="ttu">{{.text}}</p>
       </div>
