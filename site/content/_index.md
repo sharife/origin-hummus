@@ -4,7 +4,7 @@ image: /img/logo.png
 blurb: 
     heading: Quality you can taste
     text: At Origin Hummus, we believe in the importance of simplicity. That’s why we use only the freshest, highest quality ingredients, allowing the natural flavors to shine through in every bite. Each batch is carefully crafted with love and appreciation for the tradition behind it, ensuring that you experience the real taste of hummus.
-    image: /img/product-bowl.png
+    image: /img/product-bowl.jpg
 info:
     heading: "How to buy"
     text: "Origin Hummus is currently being offered at:"
