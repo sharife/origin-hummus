@@ -1,7 +1,7 @@
 <!-- Contact -->
 <div class="mb4">
 
-  <form netlify action="">
+  <form netlify name="contact" method="POST">
     <div class="flex-l mhn1-l">
       <!-- Name -->
       <div class="pr1-l w-50-l">
@@ -30,3 +30,23 @@
     </div>
   </form>
 </div>
+
+<script type="text/javascript">
+  const handleSubmit = event => {
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch(error => alert(error));
+};
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
+
+</script>
