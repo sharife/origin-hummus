@@ -1,27 +1,25 @@
 <!-- Contact -->
 <div class="mb4">
-
   <form netlify name="contact" method="POST">
     <div class="flex-l mhn1-l">
       <!-- Name -->
       <div class="pr1-l w-50-l">
         <fieldset>
-          <input type="text" id="name" name="name" placeholder="Name" class="w-100 mb2">
+          <input type="text" id="name" name="name" placeholder="Name" class="w-100 mb2" required>
           <label for="name">Name</label>
         </fieldset>
       </div>
       <!-- Email -->
       <div class="w-50-l">
         <fieldset>
-          <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb2">
+          <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb2" required>
           <label for="email">Email</label>
         </fieldset>
       </div>
     </div>
-
     <!-- Message -->
     <fieldset>
-      <textarea id="message" name="message" placeholder="Your message" rows="8" cols="80" class="w-100"></textarea>
+      <textarea id="message" name="message" placeholder="Your message" rows="8" cols="80" class="w-100" required></textarea>
       <label for="message">Your message</label>
     </fieldset>
     <!-- Button -->
@@ -29,24 +27,54 @@
       <button type="submit" class="btn w-100 w-auto-ns raise grey-3">Send</button>
     </div>
   </form>
+  
+  <!-- Success Message (hidden by default) -->
+  <div id="success-message" class="tc pa3 mt3" style="display: none; background-color: #e8f5e9; color: #2e7d32; border-radius: 4px;">
+    <p class="ma0">Thank you for your message! We'll get back to you soon.</p>
+  </div>
 </div>
 
 <script type="text/javascript">
   const handleSubmit = event => {
-  event.preventDefault();
-
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch(error => alert(error));
-};
-
-document.querySelector("form").addEventListener("submit", handleSubmit);
-
+    event.preventDefault();
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    const successMessage = document.getElementById("success-message");
+    const submitButton = myForm.querySelector("button[type='submit']");
+    
+    // Disable the submit button during submission
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        console.log("Form successfully submitted");
+        // Show success message
+        successMessage.style.display = "block";
+        // Reset form
+        myForm.reset();
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.innerText = "Send";
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+      })
+      .catch(error => {
+        console.error("Form submission error:", error);
+        alert("Oops! There was a problem submitting your form. Please try again.");
+        submitButton.disabled = false;
+        submitButton.innerText = "Send";
+      });
+  };
+  
+  document.querySelector("form").addEventListener("submit", handleSubmit);
 </script>
